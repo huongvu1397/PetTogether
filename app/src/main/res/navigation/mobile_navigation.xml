@@ -12,15 +12,12 @@
         <action
                 android:id="@+id/action_mainFragment_to_detailFragment"
         />
+        <action android:id="@+id/action_mainFragment_to_screenFragment" app:destination="@id/screenFragment"/>
     </fragment>
     <fragment
         android:id="@+id/screenFragment"
         android:name="com.devhwang.a84974.pettogether.view.ScreenFragment"
-        android:label="ScreenFragment">
-        <action
-            android:id="@+id/action_screenFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+        android:label="ScreenFragment"/>
 
 
 </navigation>

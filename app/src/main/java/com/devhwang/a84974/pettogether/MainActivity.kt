@@ -15,4 +15,5 @@ class MainActivity : AppCompatActivity() {
         return Navigation.findNavController(this,R.id.main_host_fragment).navigateUp()
     }
 
+
 }
