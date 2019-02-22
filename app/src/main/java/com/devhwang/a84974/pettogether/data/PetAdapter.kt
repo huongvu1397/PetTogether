@@ -2,6 +2,7 @@ package com.devhwang.a84974.pettogether.data
 
 import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,8 +27,8 @@ class PetAdapter(private val petListViewModel: PetListViewModel, private val act
     }
 
     override fun getItemCount(): Int {
-        if (pets == null) return 0
-        else return pets.size
+        return if (pets == null) 0
+        else pets.size
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
@@ -59,6 +60,7 @@ class PetAdapter(private val petListViewModel: PetListViewModel, private val act
             binding.apply {
                 selected = onSelected
                 pet = item
+
                 executePendingBindings()
                 //avatarCat.setImageResource()
             }

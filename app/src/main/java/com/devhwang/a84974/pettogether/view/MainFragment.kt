@@ -29,14 +29,13 @@ class MainFragment : Fragment() {
         val context = context ?: return binding.root
         val factory = InjectorUtils.providePetListViewModelFactory(context)
         viewModel = ViewModelProviders.of(this, factory).get(PetListViewModel::class.java)
-
         val adapter = PetAdapter(viewModel, requireActivity())
         binding.rcvPets.adapter = adapter
-        subscribe(adapter)
+        subScribe(adapter)
         return binding.root
     }
 
-    private fun subscribe(adapter: PetAdapter) {
+    private fun subScribe(adapter: PetAdapter) {
         binding.rcvPets.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         viewModel.getPets().observe(viewLifecycleOwner, Observer { pets -> if (pets != null) adapter.updateData(pets) })
 

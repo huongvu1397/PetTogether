@@ -6,9 +6,9 @@
         <variable
                 name="selected"
                 type="android.view.View.OnClickListener"/>
-            <variable
-                    name="pet"
-                    type="com.devhwang.a84974.pettogether.model.PetProfie"/>
+        <variable
+                name="pet"
+                type="com.devhwang.a84974.pettogether.model.PetProfie"/>
     </data>
 
     <android.support.v7.widget.CardView
@@ -46,7 +46,7 @@
                 <TextView
                         android:id="@+id/name_cat_value"
                         android:layout_width="wrap_content"
-                        android:text="Ash"
+                        android:text=""
                         android:layout_height="wrap_content"/>
             </LinearLayout>
 
@@ -68,7 +68,7 @@
                 <TextView
                         android:layout_toRightOf="@id/type_cat"
                         android:layout_width="wrap_content"
-                        android:text="Scottish Cat"
+                        android:text=""
                         android:id="@+id/type_cat_value"
                         android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -91,7 +91,7 @@
                 <TextView
                         android:layout_toRightOf="@id/type_cat"
                         android:layout_width="wrap_content"
-                        android:text="999y999m"
+                        android:text="@{pet.age}"
                         android:id="@+id/age_cat_value"
                         android:layout_height="wrap_content"/>
             </LinearLayout>

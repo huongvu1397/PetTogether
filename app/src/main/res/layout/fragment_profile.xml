@@ -5,6 +5,9 @@
         <variable
                 name="viewModel"
                 type="com.devhwang.a84974.pettogether.viewmodel.PetListViewModel"/>
+        <variable
+                name="handler"
+                type="com.devhwang.a84974.pettogether.view.ProfileFragment.HandlerProfile"/>
     </data>
     <android.support.constraint.ConstraintLayout
             android:padding="30dp"
@@ -37,6 +40,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 android:layout_width="wrap_content"
                 android:text="OK"
+                android:onClick="@{()->handler.onClickSave()}"
                 android:layout_height="wrap_content"/>
     </android.support.constraint.ConstraintLayout>
 </layout>
