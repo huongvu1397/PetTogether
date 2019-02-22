@@ -6,5 +6,5 @@ import com.devhwang.a84974.pettogether.data.PetRepository
 
 class PetListVewModelFactory(private val repository: PetRepository):ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T = PetListVewModelFactory(repository) as T
+    override fun <T : ViewModel> create(modelClass: Class<T>) = PetListViewModel(repository) as T
 }

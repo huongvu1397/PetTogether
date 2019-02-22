@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
 
     </data>
     <android.support.constraint.ConstraintLayout
+            android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+        <ImageView
+                android:id="@+id/avatar_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <EditText
+                android:id="@+id/name_profile"
+                app:layout_constraintTop_toBottomOf="@id/avatar_profile"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <EditText
+                android:id="@+id/type_profile"
+                app:layout_constraintTop_toBottomOf="@id/name_profile"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <Button
+                app:layout_constraintTop_toBottomOf="@id/type_profile"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:text="OK"
+                android:layout_height="wrap_content"/>
     </android.support.constraint.ConstraintLayout>
 </layout>

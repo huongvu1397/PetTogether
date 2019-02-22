@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/mobile_navigation"
-    app:startDestination="@id/mainFragment">
+            app:startDestination="@id/mainFragment">
 
     <fragment
             android:id="@+id/mainFragment"
             android:name="com.devhwang.a84974.pettogether.view.MainFragment"
             android:label="fragment_main"
             tools:layout="@layout/fragment_main">
+
         <action
-                android:id="@+id/action_mainFragment_to_detailFragment"
-        />
-        <action android:id="@+id/action_mainFragment_to_screenFragment" app:destination="@id/screenFragment"/>
+                android:id="@+id/action_mainFragment_to_screenFragment"
+                app:destination="@id/screenFragment"/>
+        <action
+                android:id="@+id/action_mainFragment_to_profileFragment"
+                app:destination="@id/profileFragment"/>
     </fragment>
     <fragment
-        android:id="@+id/screenFragment"
-        android:name="com.devhwang.a84974.pettogether.view.ScreenFragment"
-        android:label="ScreenFragment"/>
+            android:id="@+id/screenFragment"
+            android:name="com.devhwang.a84974.pettogether.view.ScreenFragment"
+            tools:layout="@layout/fragment_screen"
+            android:label="ScreenFragment"/>
+    <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.devhwang.a84974.pettogether.view.ProfileFragment"
+            tools:layout="@layout/fragment_profile"
+            android:label="ProfileFragment">
+        <argument
+                android:name="petId"
+                app:argType="string" />
+    </fragment>
 
 
 </navigation>
