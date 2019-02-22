@@ -9,35 +9,13 @@ import com.devhwang.a84974.pettogether.model.PetProfie
 
 class PetListViewModel internal constructor(private val petListRepository: PetRepository): ViewModel() {
 
-    private val age = MutableLiveData<Long>()
-    private val petList = MediatorLiveData<List<PetProfie>>()
+    fun getPet(stringId: String) = petListRepository.getPet(stringId)
 
-    init{
-        age.value =  noAge
-        val livePetList = Transformations.switchMap(age){
-            if(it == noAge){
-                petListRepository.getPets()
-            }else{
-                petListRepository.getPetsWithAge(it)
-            }
-        }
-        petList.addSource(livePetList,petList::setValue)
-    }
+    //fun deleteSign(sign: PetProfie) = petListRepository.deleteSign(sign)
 
-    fun getPets() = petList
+    fun getPets() = petListRepository.getPets()
 
-    fun setPetAge(age:Long){
-        this.age.value = age
-    }
+    fun insertPet(pet: PetProfie) = petListRepository.insertPet(pet)
 
-    fun clearAge(){
-        this.age.value = noAge
-    }
-
-    fun isSetAge() = age.value != noAge
-
-    companion object {
-        private const val noAge = -1L
-    }
 
 }

@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-
+        <variable
+                name="viewModel"
+                type="com.devhwang.a84974.pettogether.viewmodel.PetListViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
             android:padding="30dp"

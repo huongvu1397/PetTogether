@@ -32,14 +32,24 @@ class PetAdapter(private val petListViewModel: PetListViewModel, private val act
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val pet = pets?.get(p1)
-        p0.bind(createOnClickSelected(pet), pet)
-
+        p0.apply {
+            p0.bind(createOnClickSelected(pet), pet)
+        }
     }
 
     private fun createOnClickSelected(pet: PetProfie): View.OnClickListener {
         return View.OnClickListener {
             Toast.makeText(activity, " " + pet.name, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun updateData(petscheck:List<PetProfie>){
+        if(petscheck ==null){
+            return
+        }
+        pets.clear()
+        pets.addAll(petscheck)
+        notifyDataSetChanged()
     }
 
 

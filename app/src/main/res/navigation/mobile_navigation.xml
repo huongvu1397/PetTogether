@@ -23,6 +23,7 @@
             android:name="com.devhwang.a84974.pettogether.view.ScreenFragment"
             tools:layout="@layout/fragment_screen"
             android:label="ScreenFragment"/>
+
     <fragment
             android:id="@+id/profileFragment"
             android:name="com.devhwang.a84974.pettogether.view.ProfileFragment"
