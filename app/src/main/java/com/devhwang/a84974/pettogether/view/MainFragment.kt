@@ -16,6 +16,7 @@ import com.devhwang.a84974.pettogether.R
 import com.devhwang.a84974.pettogether.data.PetAdapter
 import com.devhwang.a84974.pettogether.databinding.FragmentMainBinding
 import com.devhwang.a84974.pettogether.databinding.FragmentProfileBinding
+import com.devhwang.a84974.pettogether.model.PetProfie
 import com.devhwang.a84974.pettogether.utilities.InjectorUtils
 import com.devhwang.a84974.pettogether.viewmodel.PetListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -40,8 +41,11 @@ class MainFragment : Fragment() {
         viewModel.getPets().observe(viewLifecycleOwner, Observer { pets -> if (pets != null) adapter.updateData(pets) })
 
         binding.fab.setOnClickListener {
+
             Navigation.findNavController(it)
                 .navigate(R.id.action_mainFragment_to_profileFragment) //(R.id.profileFragment)
+//            var xxx = arrayListOf<PetProfie>(PetProfie("Cuong3333","cuong cuong ","hooman","default",0))
+//            adapter.updateData(xxx)
         }
     }
 
