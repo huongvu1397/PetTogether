@@ -11,7 +11,7 @@ object InjectorUtils {
         return PetRepository.getInstance(AppDatabase.getInstance(context).petDao())
     }
 
-    private fun providePetListViewModelFactory(context: Context):PetListVewModelFactory{
+    fun providePetListViewModelFactory(context: Context):PetListVewModelFactory{
         val repository = getPetRepository(context)
         return PetListVewModelFactory(repository)
     }

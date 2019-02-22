@@ -34,7 +34,7 @@ class PetListViewModel internal constructor(private val petListRepository: PetRe
         this.age.value = noAge
     }
 
-    fun isFiltered() = age.value != noAge
+    fun isSetAge() = age.value != noAge
 
     companion object {
         private const val noAge = -1L

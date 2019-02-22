@@ -1,6 +1,5 @@
 package com.devhwang.a84974.pettogether.data
 
-import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
@@ -16,9 +15,10 @@ abstract class AppDatabase:RoomDatabase() {
 
     companion object {
         @Volatile private var instance:AppDatabase? = null
+
         fun getInstance(context: Context):AppDatabase{
             return instance ?: synchronized(this){
-                instance?:buildDatabase(context)
+                instance?:buildDatabase(context).also { instance = it }
             }
         }
         private fun buildDatabase(context: Context): AppDatabase {
