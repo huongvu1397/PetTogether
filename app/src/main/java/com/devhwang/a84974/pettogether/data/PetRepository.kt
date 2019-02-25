@@ -1,6 +1,6 @@
 package com.devhwang.a84974.pettogether.data
 
-import com.devhwang.a84974.pettogether.model.PetProfie
+import com.devhwang.a84974.pettogether.model.PetProfile
 
 class PetRepository private constructor(private val petDao: PetDao) {
 
@@ -8,9 +8,9 @@ class PetRepository private constructor(private val petDao: PetDao) {
 
     fun getPet(petId: String) = petDao.getPet(petId)
 
-    fun insertPet(pet:PetProfie) = petDao.insertPet(pet)
+    fun insertPet(pet:PetProfile) = petDao.insertPet(pet)
 
-    fun deletePet(pet:PetProfie) = petDao.deletePet(pet)
+    fun deletePet(pet:PetProfile) = petDao.deletePet(pet)
 
     companion object {
         @Volatile

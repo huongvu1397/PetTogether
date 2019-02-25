@@ -9,7 +9,7 @@
                 type="android.view.View.OnClickListener"/>
         <variable
                 name="pet"
-                type="com.devhwang.a84974.pettogether.model.PetProfie"/>
+                type="com.devhwang.a84974.pettogether.model.PetProfile"/>
 
     </data>
 

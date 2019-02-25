@@ -10,10 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.devhwang.a84974.pettogether.R
 import com.devhwang.a84974.pettogether.databinding.FragmentProfileBinding
-import com.devhwang.a84974.pettogether.model.PetProfie
+import com.devhwang.a84974.pettogether.model.PetProfile
 import com.devhwang.a84974.pettogether.utilities.InjectorUtils
 import com.devhwang.a84974.pettogether.viewmodel.PetListViewModel
-import kotlin.random.Random
 
 class ProfileFragment : Fragment() {
     lateinit var binding:FragmentProfileBinding
@@ -32,11 +31,16 @@ class ProfileFragment : Fragment() {
 
     inner class HandlerProfile{
         fun onClickSave(){
-            var random = Random(10000)
-            var x = random.nextInt()
+            var x = (0..1000).random()
             Log.d("TestDDDD","$x")
-            petListViewModel.insertPet(PetProfie("$x",binding.nameProfile.text.toString(),binding.typeProfile.text.toString(),"default",2))
+            //petListViewModel.insertPet(PetProfile(binding.nameProfile.text.toString(),binding.typeProfile.text.toString(),"default",x.toLong()))
+            var petProfile = PetProfile()
+            petProfile.name = binding.nameProfile.text.toString()
+            petProfile.age = 5
+            petProfile.type = binding.typeProfile.text.toString()
+            petProfile.imageUrl = "default"
 
+            petListViewModel.insertPet(petProfile)
         }
     }
 

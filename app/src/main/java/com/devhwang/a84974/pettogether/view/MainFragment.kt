@@ -2,24 +2,20 @@ package com.devhwang.a84974.pettogether.view
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.navigation.Navigation
 import com.devhwang.a84974.pettogether.MainActivity
 import com.devhwang.a84974.pettogether.R
 import com.devhwang.a84974.pettogether.data.PetAdapter
 import com.devhwang.a84974.pettogether.databinding.FragmentMainBinding
-import com.devhwang.a84974.pettogether.databinding.FragmentProfileBinding
-import com.devhwang.a84974.pettogether.model.PetProfie
 import com.devhwang.a84974.pettogether.utilities.InjectorUtils
 import com.devhwang.a84974.pettogether.viewmodel.PetListViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainFragment : Fragment() {
     private lateinit var viewModel: PetListViewModel
@@ -38,7 +34,8 @@ class MainFragment : Fragment() {
 
     private fun subScribe(adapter: PetAdapter) {
         binding.rcvPets.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        viewModel.getPets().observe(viewLifecycleOwner, Observer { pets -> if (pets != null) adapter.updateData(pets) })
+        viewModel.getPets().observe(viewLifecycleOwner, Observer { pets -> if (pets != null)
+            adapter.updateData(pets!!) })
 
         binding.fab.setOnClickListener {
 

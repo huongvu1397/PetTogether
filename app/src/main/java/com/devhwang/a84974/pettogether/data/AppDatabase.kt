@@ -6,9 +6,9 @@ import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
 import android.content.Context
 import com.devhwang.a84974.pettogether.helper.DATABASE_NAME
-import com.devhwang.a84974.pettogether.model.PetProfie
+import com.devhwang.a84974.pettogether.model.PetProfile
 
-@Database(entities = [PetProfie::class], version = 1, exportSchema = false)
+@Database(entities = [PetProfile::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase:RoomDatabase() {
     abstract fun petDao():PetDao

@@ -40,6 +40,7 @@
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_margin="30dp"
+                android:src="@drawable/ic_dog_paw"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_height="wrap_content"/>

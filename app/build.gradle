@@ -47,5 +47,7 @@ dependencies {
     // ROOM
     implementation "android.arch.persistence.room:runtime:1.1.1"
     kapt "android.arch.persistence.room:compiler:1.1.1"
+    //Shape of View
+    implementation 'com.github.florent37:shapeofview:1.3.2'
 
 }

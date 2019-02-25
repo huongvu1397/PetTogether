@@ -1,46 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
                 name="viewModel"
                 type="com.devhwang.a84974.pettogether.viewmodel.PetListViewModel"/>
+
         <variable
                 name="handler"
                 type="com.devhwang.a84974.pettogether.view.ProfileFragment.HandlerProfile"/>
     </data>
+
     <android.support.constraint.ConstraintLayout
-            android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <ImageView
-                android:id="@+id/avatar_profile"
+
+        <RelativeLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.github.florent37.shapeofview.shapes.DiagonalView
+                    android:layout_width="match_parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="150dp"
+                    android:elevation="4dp"
+                    app:shape_diagonal_angle="10"
+                    app:shape_diagonal_position="bottom">
+
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/colorAccent"
+                        android:layout_height="match_parent"/>
+
+            </com.github.florent37.shapeofview.shapes.DiagonalView>
+        </RelativeLayout>
+
+        <com.github.florent37.shapeofview.shapes.PolygonView
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        <EditText
-                android:id="@+id/name_profile"
-                app:layout_constraintTop_toBottomOf="@id/avatar_profile"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/avatar_layout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:shape_polygon_noOfSides="9"
+                >
+
+            <ImageView
+                    android:background="@color/colorAccent"
+                    android:id="@+id/avatar_profile"
+                    android:src="@drawable/avatar_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </com.github.florent37.shapeofview.shapes.PolygonView>
+
+
+        <ScrollView
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                app:layout_constraintTop_toBottomOf="@id/avatar_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <EditText
-                android:id="@+id/type_profile"
-                app:layout_constraintTop_toBottomOf="@id/name_profile"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <Button
-                app:layout_constraintTop_toBottomOf="@id/type_profile"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:text="OK"
-                android:onClick="@{()->handler.onClickSave()}"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:id="@+id/name_layout"
+                        android:layout_width="match_parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="Tên"
+                            android:id="@+id/txt_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            />
+
+                    <EditText
+                            android:id="@+id/name_profile"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/type_layout"
+                        app:layout_constraintTop_toBottomOf="@id/name_layout"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Thể Loại"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:id="@+id/type_profile"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/breed_layout"
+                        app:layout_constraintTop_toBottomOf="@id/type_layout"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Giống"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:id="@+id/breed_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/gender_layout"
+                        app:layout_constraintTop_toBottomOf="@id/breed_layout"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Giới tính"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:id="@+id/gender_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/about_layout"
+                        app:layout_constraintTop_toBottomOf="@id/gender_layout"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Mô tả"
+                            android:layout_height="wrap_content"/>
+
+                    <EditText
+                            android:id="@+id/about_profile"
+                            android:backgroundTint="@android:color/transparent"
+                            android:gravity="top"
+                            android:hint="Mô tả"
+                            android:maxHeight="100dp"
+                            android:minHeight="100dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+                <Button
+                        app:layout_constraintTop_toBottomOf="@id/about_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_width="wrap_content"
+                        android:text="OK"
+                        android:onClick="@{()->handler.onClickSave()}"
+                        android:layout_height="wrap_content"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
     </android.support.constraint.ConstraintLayout>
 </layout>

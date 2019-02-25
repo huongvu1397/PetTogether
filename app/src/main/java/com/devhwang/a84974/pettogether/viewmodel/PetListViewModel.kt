@@ -1,11 +1,8 @@
 package com.devhwang.a84974.pettogether.viewmodel
 
-import android.arch.lifecycle.MediatorLiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.Transformations
 import android.arch.lifecycle.ViewModel
 import com.devhwang.a84974.pettogether.data.PetRepository
-import com.devhwang.a84974.pettogether.model.PetProfie
+import com.devhwang.a84974.pettogether.model.PetProfile
 
 class PetListViewModel internal constructor(private val petListRepository: PetRepository): ViewModel() {
 
@@ -15,7 +12,7 @@ class PetListViewModel internal constructor(private val petListRepository: PetRe
 
     fun getPets() = petListRepository.getPets()
 
-    fun insertPet(pet: PetProfie) = petListRepository.insertPet(pet)
+    fun insertPet(pet: PetProfile) = petListRepository.insertPet(pet)
 
 
 }

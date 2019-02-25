@@ -2,20 +2,19 @@ package com.devhwang.a84974.pettogether.data
 
 import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.devhwang.a84974.pettogether.databinding.ItemOneBinding
-import com.devhwang.a84974.pettogether.model.PetProfie
+import com.devhwang.a84974.pettogether.model.PetProfile
 import com.devhwang.a84974.pettogether.viewmodel.PetListViewModel
 
 class PetAdapter(private val petListViewModel: PetListViewModel, private val activity: FragmentActivity) :
     RecyclerView.Adapter<PetAdapter.ViewHolder>() {
 
     companion object {
-        var pets: ArrayList<PetProfie> = arrayListOf()
+        var pets: ArrayList<PetProfile> = arrayListOf()
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -38,13 +37,13 @@ class PetAdapter(private val petListViewModel: PetListViewModel, private val act
         }
     }
 
-    private fun createOnClickSelected(pet: PetProfie): View.OnClickListener {
+    private fun createOnClickSelected(pet: PetProfile): View.OnClickListener {
         return View.OnClickListener {
             Toast.makeText(activity, " " + pet.name, Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun updateData(petscheck:List<PetProfie>){
+    fun updateData(petscheck:List<PetProfile>){
         if(petscheck ==null){
             return
         }
@@ -56,7 +55,7 @@ class PetAdapter(private val petListViewModel: PetListViewModel, private val act
 
     class ViewHolder(private val binding: ItemOneBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(onSelected: View.OnClickListener, item: PetProfie) {
+        fun bind(onSelected: View.OnClickListener, item: PetProfile) {
             binding.apply {
                 selected = onSelected
                 pet = item
