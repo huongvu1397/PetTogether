@@ -50,4 +50,6 @@ dependencies {
     //Shape of View
     implementation 'com.github.florent37:shapeofview:1.3.2'
 
+    //
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 }
