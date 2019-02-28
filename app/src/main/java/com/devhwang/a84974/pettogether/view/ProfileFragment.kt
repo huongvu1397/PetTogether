@@ -56,6 +56,7 @@ class ProfileFragment : Fragment() {
         binding.typeSpinner.adapter = arrayAdapter
         binding.typeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
+                    //
 
             }
 
